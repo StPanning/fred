@@ -1,3 +1,9 @@
+# THIS IS AN INOFFICIAL BRANCH
+
+the official git-repository of fred the project can be found here:
+https://github.com/freenet/fred
+
+
 ## QUICK START
 
 If the installer did not do it for you, start Freenet and open a browser pointing
@@ -7,41 +13,41 @@ to http://127.0.0.1:8888/
 
 The Freenet Project is very pleased to announce the release of Freenet 0.7.0.
 
-Freenet is software designed to allow the free exchange of information over the 
-Internet without fear of censorship, or reprisal. To achieve this Freenet makes it 
-very difficult for adversaries to reveal the identity, either of the person 
-publishing, or downloading content. The Freenet project started in 1999, released 
+Freenet is software designed to allow the free exchange of information over the
+Internet without fear of censorship, or reprisal. To achieve this Freenet makes it
+very difficult for adversaries to reveal the identity, either of the person
+publishing, or downloading content. The Freenet project started in 1999, released
 Freenet 0.1 in March 2000, and has been under active development ever since.
 
-Freenet is unique in that it handles the storage of content, meaning that if 
-necessary users can upload content to Freenet and then disconnect. We've 
-discovered that this is a key requirement for many Freenet users. Once uploaded, 
-content is mirrored and moved around the Freenet network, making it very difficult 
-to trace, or to destroy. Content will remain in Freenet for as long as people are 
-retrieving it, although Freenet makes no guarantee that content will be stored 
+Freenet is unique in that it handles the storage of content, meaning that if
+necessary users can upload content to Freenet and then disconnect. We've
+discovered that this is a key requirement for many Freenet users. Once uploaded,
+content is mirrored and moved around the Freenet network, making it very difficult
+to trace, or to destroy. Content will remain in Freenet for as long as people are
+retrieving it, although Freenet makes no guarantee that content will be stored
 indefinitely.
 
-The journey towards Freenet 0.7 began in 2005 with the realization that some of 
-Freenet's most vulnerable users needed to hide the fact that they were using 
-Freenet, not just what they were doing with it. The result of this realization was a 
-ground-up redesign and rewrite of Freenet, adding a "darknet" capability, allowing 
-users to limit who their Freenet software would communicate with to trusted friends. 
-This would make it far more difficult for a third-party to determine who is using 
+The journey towards Freenet 0.7 began in 2005 with the realization that some of
+Freenet's most vulnerable users needed to hide the fact that they were using
+Freenet, not just what they were doing with it. The result of this realization was a
+ground-up redesign and rewrite of Freenet, adding a "darknet" capability, allowing
+users to limit who their Freenet software would communicate with to trusted friends.
+This would make it far more difficult for a third-party to determine who is using
 Freenet.
 
-Freenet 0.7 also embodies significant improvements to almost every other aspect of 
-Freenet, including efficiency, security, and usability. Freenet is available for Windows, 
+Freenet 0.7 also embodies significant improvements to almost every other aspect of
+Freenet, including efficiency, security, and usability. Freenet is available for Windows,
 Linux, and OSX. It can be downloaded from:
 
 http://freenetproject.org/download.html
 
-If you have any difficulty getting Freenet to work, or any questions not answered in the 
+If you have any difficulty getting Freenet to work, or any questions not answered in the
 faq, please join us on IRC in the #freenet channel at irc.freenode.net. Thank you.
 
-This release would not have been possible without the efforts of numerous volunteers, and 
-Matthew Toseland, Freenet's full time developer. Matthew's work is funded through donations 
-via our website (as well as a few larger sponsors from time to time). We ask that anyone 
-who can help us to ensure Matthew's continued employment visit our donations page and 
+This release would not have been possible without the efforts of numerous volunteers, and
+Matthew Toseland, Freenet's full time developer. Matthew's work is funded through donations
+via our website (as well as a few larger sponsors from time to time). We ask that anyone
+who can help us to ensure Matthew's continued employment visit our donations page and
 make a contribution at:
 
 http://freenetproject.org/donate.html
@@ -49,7 +55,7 @@ http://freenetproject.org/donate.html
 Press enquiries should be directed to Ian Clarke.
 
 ## ALWAYS ON
-On OSX, Freenet will create a configuration file at 
+On OSX, Freenet will create a configuration file at
 ~/Library/LaunchAgents/com.freenet.startup.plist. On other unix-based systems,
 Freenet will create a cron job to run Freenet on startup. On Windows, Freenet is
 run by the rabbit tray icon, which starts on login from the startup folder. You should
@@ -72,7 +78,7 @@ software that is accessed through localhost.
 
 There are many potentially dangerous features in most browsers which you can disable.
 Most of them will be turned off by privacy/incognito mode, hopefully. Candidates include
-location-based services (geo.enabled) and GoBrowsing (keyword.enabled) in firefox, and 
+location-based services (geo.enabled) and GoBrowsing (keyword.enabled) in firefox, and
 probably a number of plugins. Note that this is not unique to Firefox - until version 9
 or so, Internet Explorer had much worse problems. The most fundamental thing is browser
 history probing via CSS. This can be turned off globally and will improve your privacy,
@@ -119,9 +125,9 @@ seriously evaluate your options, including the option of not posting whatever
 controversial content it is you are thinking of posting. Freenet has not yet
 reached version 1.0, and several important security features have not yet been
 implemented; there are several known attacks which future versions will greatly
-reduce, and there are likely to be (and have been) serious bugs. If you do 
-choose to use Freenet under such circumstances, you  should enable the MAXIMUM 
-network security level and add connections to your friends on the Friends page; 
+reduce, and there are likely to be (and have been) serious bugs. If you do
+choose to use Freenet under such circumstances, you  should enable the MAXIMUM
+network security level and add connections to your friends on the Friends page;
 connecting only to friends greatly improves your security, making it very hard to
 trace content back to you, and reasonably difficult to find out that you are even
 running Freenet, but you should only connect to people you actually know: You are
@@ -136,8 +142,8 @@ it to read it. If you have already installed Freenet you can still see it here:
 http://127.0.0.1:8888/wizard/?step=OPENNET
 
 ## CHANGES FROM 0.5
-This is the 0.7 rewrite of Freenet. This is largely rewritten from scratch, 
-although it pulls in a load of code from Dijjer, and most of the crypto and a 
+This is the 0.7 rewrite of Freenet. This is largely rewritten from scratch,
+although it pulls in a load of code from Dijjer, and most of the crypto and a
 few other classes from the 0.5 source.
 
 ### Major changes
@@ -145,11 +151,11 @@ few other classes from the 0.5 source.
   a small-world network, which Freenet makes routable by location swapping. This
   greatly increases the network's robustness as it makes it much harder to find
   and block Freenet nodes on a national firewall, as well as improving security
-  generally provided that your friends are trustworthy. 
+  generally provided that your friends are trustworthy.
 - Opennet mode (plug and play) is also supported. Just select network security
   level NORMAL or LOW in the first-time wizard.
 - Freenet now uses UDP, mainly to improve connectivity over NATs and firewalls.
-- Freenet now uses 32kB fixed block sizes, to improve performance and simplify 
+- Freenet now uses 32kB fixed block sizes, to improve performance and simplify
   the code.
 - The Freenet Client Protocol is completely different, see the spec here:
   https://wiki.freenetproject.org/FCPv2
