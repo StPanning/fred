@@ -1,5 +1,6 @@
 package freenet.node;
 
+import freenet.io.comm.Peer;
 import freenet.crypt.ECDH;
 import freenet.crypt.ECDSA.Curves;
 import freenet.crypt.ECDSA.Curves;
@@ -14,10 +15,11 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class FNPPacketParser10 extends AbstractFNPPacketParser {
+    private NodeCrypto m_nodeCrypto;
 
-    protected FNPPacketParser10(PeerNode pn, Peer replyPeer,
-                                NodeCrypto nc, CipherSpecs cs){
-        super(pn, replyPeer, nc, cs);
+    protected FNPPacketParser10(NodeCrypto nc, CipherSpecs cs){
+        super(cs);
+        m_nodeCrypto = nc;
     }
 
     public AbstractJFKMessage
@@ -60,7 +62,7 @@ public class FNPPacketParser10 extends AbstractFNPPacketParser {
                 throw new FNPPacketException(err_msg.toString());
             }
         }
-        return new JFKMessage1(10, m_pn, m_replyPeer, mhisExp);
+        return new JFKMessage1(hisExp);
     }
 
     public AbstractJFKMessage
@@ -105,8 +107,7 @@ public class FNPPacketParser10 extends AbstractFNPPacketParser {
         }
 
 	if(message3 != null) {
-            return new JFKMessage3Cached(10, m_pn, m_replyPeer,
-                                          (byte[]) message3);
+            return new JFKMessage3Cached((byte[]) message3);
         }
 
         byte[] myNi = null;
@@ -125,8 +126,7 @@ public class FNPPacketParser10 extends AbstractFNPPacketParser {
             String e = "ECDSA signature verification has failed";
             throw new FNPPacketException(e);
         }
-        return new JFKMessage3(10, m_pn, m_replyPeer,
-                               myNi, nonceResponder,
+        return new JFKMessage3( myNi, nonceResponder,
                                hisExp, authenticator);
     }
 }

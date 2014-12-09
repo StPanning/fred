@@ -35,7 +35,7 @@ public class JFKMessage3 extends AbstractJFKMessage {
     }
 
     public void
-    send(FNPPacketMangler pm){
-        pm.send(this);
+    send(JFKHandshakeInterface ji){
+        ji.send(this);
     }
 }
